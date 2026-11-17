@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialFlow - Social Media Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>✦ SocialFlow</h2>
+        <p>WORKSPACE</p>
+
+        <nav>
+            <a href="#dashboard">▦ Dashboard</a>
+            <a href="#calendar">▣ Content Calendar</a>
+            <a href="#posts">Manage Posts</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header>
+            <div>
+                <h1>Social Media Planner</h1>
+                <p>Plan better content. Keep every channel organized.</p>
+            </div>
+            <button id="addPostBtn">+ Create Post</button>
+        </header>
+
+        <!-- Dashboard -->
+        <section id="dashboard">
+            <h2>Good planning starts here.</h2>
+            <p>Here's what's happening across your social channels.</p>
+
+            <div id="stats" class="stats-container">
+
+                <div class="stat-card">
+                    <h3>Total Posts</h3>
+                    <p id="totalPosts">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Draft Posts</h3>
+                    <p id="draftPosts">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Scheduled Posts</h3>
+                    <p id="scheduledPosts">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Published Posts</h3>
+                    <p id="publishedPosts">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pending Approval</h3>
+                    <p id="pendingPosts">0</p>
+                </div>
+
+            </div>
+
+            <div id="upcomingPosts"></div>
+            <div id="platformDistribution"></div>
+        </section>
+
+        <!-- Calendar -->
+        <section id="calendar">
+            <h2>Content Calendar</h2>
+            <div id="calendarControls"></div>
+            <div id="calendarGrid"></div>
+        </section>
+
+        <!-- Manage Posts -->
+        <section id="posts">
+            <h2>Manage Posts</h2>
+            <div id="postList"></div>
+        </section>
+
+        <!-- Create Post Form -->
+        <section id="postFormSection">
+            <h2>Create New Post</h2>
+
+            <form id="postForm">
+
+                <input type="hidden" id="postId">
+
+                <label for="postTitle">Post Title</label>
+                <input type="text" id="postTitle"
+                    placeholder="Enter post title" required>
+
+                <label for="platform">Platform</label>
+                <select id="platform" required>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="X (Twitter)">X (Twitter)</option>
+                    <option value="YouTube">YouTube</option>
+                </select>
+
+                <label for="caption">Caption</label>
+                <textarea id="caption" required></textarea>
+
+                <label for="hashtags">Hashtags</label>
+                <input type="text" id="hashtags">
+
+                <label for="postDate">Publishing Date</label>
+                <input type="date" id="postDate" required>
+
+                <label for="postTime">Publishing Time</label>
+                <input type="time" id="postTime" required>
+
+                <label for="contentType">Content Type</label>
+                <select id="contentType">
+                    <option>Image</option>
+                    <option>Video</option>
+                    <option>Carousel</option>
+                    <option>Reel</option>
+                    <option>Story</option>
+                    <option>Text</option>
+                </select>
+
+                <label for="postStatus">Post Status</label>
+                <select id="postStatus">
+                    <option>Draft</option>
+                    <option>Scheduled</option>
+                    <option>Pending Approval</option>
+                    <option>Published</option>
+                </select>
+
+                <label for="postImage">Upload Image</label>
+                <input type="file" id="postImage" accept="image/*">
+
+                <img id="imagePreview" width="150"
+                    alt="Image preview" hidden>
+
+                <div class="form-buttons">
+                    <button type="submit">Save Post</button>
+                    <button type="reset" class="cancel-btn">Cancel</button>
+                </div>
+
+            </form>
+
+            <div id="postPreview"></div>
+        </section>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
